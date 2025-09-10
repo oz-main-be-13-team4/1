@@ -4,5 +4,7 @@ class Question(models.Model):
     id = fields.IntField(pk=True)
     text = fields.TextField()
 
+    user_questions: fields.ReverseRelation["UserQuestion"]
+
     class Meta:
         table = "question"

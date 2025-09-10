@@ -28,3 +28,13 @@ src_folder = "./."
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+select = ["E", "F", "I", "UP"]
+ignore = ["D100", "D104", "D401"]  # 예시: Docstring 강제하지 않음
+
+[tool.ruff.isort]
+known-first-party = ["app"]
+combine-as-imports = true
