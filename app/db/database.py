@@ -11,6 +11,8 @@ TORTOISE_ORM = {
                 "app.models.diary",
                 "app.models.quote",
                 "app.models.question",
+                "app.models.bookmark",
+                "app.models.user_question",
                 "aerich.models",  # aerich migration 기록용
             ],
             "default_connection": "default",
