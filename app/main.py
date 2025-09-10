@@ -2,6 +2,7 @@
 from fastapi import FastAPI
 from app.db.database import init_db
 from app.api.v1 import auth, diary, quote, question
+from tortoise.contrib.fastapi import register_tortoise
 
 app = FastAPI()
 

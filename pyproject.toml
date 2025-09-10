@@ -2,7 +2,7 @@
 name = "1"
 version = "0.1.0"
 description = "FastAPI Mini Project"
-authors = ["Team Project <grrr127@gmail.com>"]
+authors = ["Team Project <dlwnsehd13@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
