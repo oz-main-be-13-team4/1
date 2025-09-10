@@ -1,11 +1,27 @@
 from tortoise.contrib.fastapi import register_tortoise
 from app.core.config import DB_URL
 
+# aerich가 인식할 전역 설정 딕셔너리
+TORTOISE_ORM = {
+    "connections": {"default": DB_URL},
+    "apps": {
+        "models": {
+            "models": [
+                "app.models.user",
+                "app.models.diary",
+                "app.models.quote",
+                "app.models.question",
+                "aerich.models",  # aerich migration 기록용
+            ],
+            "default_connection": "default",
+        },
+    },
+}
+
 def init_db(app):
     register_tortoise(
         app,
-        db_url=DB_URL,
-        modules={"models": ["app.models.user", "app.models.diary", "app.models.quote", "app.models.question"]},
-        generate_schemas=True,   # 개발 중엔 True, 운영에서는 False + aerich
+        config=TORTOISE_ORM,
+        generate_schemas=False,  # 개발 중에는 True 가능, 운영/팀 협업 시엔 False + aerich
         add_exception_handlers=True,
     )

@@ -1,20 +1,29 @@
 [tool.poetry]
 name = "1"
 version = "0.1.0"
-description = ""
-authors = ["UNGBI78 <mybluewings78@gmail.com>"]
+description = "FastAPI Mini Project"
+authors = ["Team Project <grrr127@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.13"
 aerich = "0.8.1"
 tomlkit = "0.13.2"
-tortoise-orm = {version = "0.23.0", extras = ["asyncpg"]}
-python-dotenv = "^1.1.1"
+pydantic-settings = "2.10.1"
+uvicorn = "^0.35.0"
+fastapi = "^0.116.1"
 
+[tool.poetry.dependencies.tortoise-orm]
+version = "0.23.0"
+extras = ["asyncpg"]
 
 [tool.poetry.group.dev.dependencies]
 ruff = "0.8.2"
+
+[tool.aerich]
+tortoise_orm = "app.db.database.TORTOISE_ORM"
+location = "./migrations"
+src_folder = "./."
 
 [build-system]
 requires = ["poetry-core"]
