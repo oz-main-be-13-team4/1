@@ -18,7 +18,7 @@ class WeatherEnum(str, enum.Enum):
 
 
 class Diary(Model):
-    diary_key = fields.IntField(pk=True)
+    id = fields.IntField(pk=True)
     user = fields.ForeignKeyField("models.User", related_name="diaries")
 
     title = fields.CharField(max_length=100)
