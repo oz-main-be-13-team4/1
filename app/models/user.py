@@ -10,7 +10,7 @@ class GenderEnum(str, enum.Enum):
 class User(models.Model):
     id = fields.IntField(pk=True)
     username = fields.CharField(max_length=50, unique=True)
-    password = fields.CharField(max_length=255)
+    password = fields.CharField(max_length=50)
     email = fields.CharField(max_length=100, unique=True)
     birthday = fields.DateField(null=True)
     gender = fields.CharEnumField(GenderEnum, default=GenderEnum.OTHER)
